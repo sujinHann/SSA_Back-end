@@ -2,8 +2,6 @@ package com.ssa.myapp5;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BoardController {
@@ -19,6 +17,38 @@ public class BoardController {
 	public String register() {
 		return "/register";
 	}
+	
+	/* 메인으로 이동 */
+	@GetMapping("/main")
+	public String main() {
+		return "/main";
+	}
+	
+	/* 상태확인 이동 */
+	@GetMapping("/state_check")
+	public String state_check() {
+		return "/state_check";
+	}
+	
+	/* 모니터링 이동 */
+	@GetMapping("/monitoring")
+	public String monitoring() {
+		return "/monitoring";
+	}
+	
+	/* 정보수정 이동 */
+	@GetMapping("/change_info")
+	public String change_info() {
+		return "/change_info";
+	}
+	
+	/* 대원관리 이동 */
+	@GetMapping("/user_info")
+	public String user_info() {
+		return "/user_info";
+	}
+	
+	
 	
 
 	
