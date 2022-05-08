@@ -8,6 +8,13 @@
 		select * from tb_user where user_id=#{user_id} and user_pw=#{user_pw}
 	</select>
 	
+	<!-- 회원가입 -->
+	<insert id="UserJoin">
+		insert into tb_user values(#{user_fs_location}, #{user_fs}, #{user_id}, #{user_pw},
+		#{user_name}, #{user_birthdate}, #{user_address}, #{user_address2},
+		#{user_gender}, #{user_bloodtype})
+	</insert>
+	
 
 
 

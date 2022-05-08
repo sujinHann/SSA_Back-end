@@ -51,7 +51,7 @@
                                 <!-- 지역마다 시/군/구 , 읍/면/동 찾아서 넣어야함 -->
                                 <div class="accordion-body">
                                     <div class="location_city">
-                                        <select class="form-control">
+                                        <select class="form-control" name="user_fs_location">
                                             <option>시/도</option>
                                             <option value="서울특별시">서울특별시</option>
                                             <option value="부산광역시">부산광역시</option>
@@ -73,14 +73,14 @@
 
                                         </select>
                                     </div>
-                                    <div class="location_county">
+                                    <div class="location_county" name="user_fs_location" >
                                         <select class="form-control">
                                             <option>시/군/구</option>
                                             <option>...</option>
 
                                         </select>
                                     </div>
-                                    <div class="location_town">
+                                    <div class="location_town" name="user_fs_location">
                                         <select class="form-control">
                                             <option>읍/면/동</option>
                                             <option>...</option>
@@ -94,7 +94,7 @@
                                     <!-- 소속 소방서도 드롭다운으로해서 위에 지역 선택시 그 지역에 있는 소방서만 추출되도록 해야함 -->
                                     <div class="form-group">
                                         <label for="fire_station_title">소방서</label>
-                                        <input type="text" class="form-control" id="fire_station"
+                                        <input type="text" class="form-control" id="fire_station" name="user_fs"
                                             placeholder="소속 소방서를 입력하세요">
                                     </div>
 
@@ -108,18 +108,15 @@
                     <!-- 아이디 폼 -->
                     <div class="form-group">
                         <label for="userId_title">아이디</label>
-                        <input type="id" class="form-control" id="userId" name="user_id" placeholder="아이디를 입력해주세요" oninput = "checkId()" required>
+                        <input type="id" class="form-control" id="userId" name="user_id" placeholder="아이디를 입력해주세요" required oninput = "checkId()" >
                         <small id="idhelp" class="form-text text-muted">4~12자 이내 영문 소문자 숫자</small>
-                        
-                        	<!-- id ajax 중복체크 -->
-							<span class="userid_ok">사용 가능한 아이디입니다.</span>
-							<span class="userid_check">사용중인 아이디입니다.</span>
+                                          
                         
                     </div><br>
                     <!-- 비밀번호 폼 -->
                     <div class="form-group">
                         <label for="passowrd_title">비밀번호</label>
-                        <input type="password" class="form-control" id="password" placeholder="비밀번호를 입력해주세요">
+                        <input type="password" class="form-control" id="password" name="user_pw" placeholder="비밀번호를 입력해주세요">
                     </div><br>
                     <!-- 비밀번호 재확인 폼 -->
                     <div class="form-group">
@@ -129,7 +126,7 @@
                     <!-- 이름 폼 -->
                     <div class="form-group">
                         <label for="userName_title">이름</label>
-                        <input type="text" class="form-control" id="userName" placeholder="이름을 입력하세요">
+                        <input type="text" class="form-control" id="userName" name="user_name" placeholder="이름을 입력하세요">
                     </div>
 
                     <!-- 생년월일 폼  -->
@@ -137,7 +134,7 @@
                     <!-- 월 선택 시 그 월에 맞는 일수가 나오도록 해야함 -->
                     <label class="form-label mt-4">생년월일</label>
                     <div class="bir_yy">
-                        <select class="form-control">
+                        <select class="form-control" name="user_birthdate">
                             <option>년도</option>
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
@@ -161,7 +158,7 @@
                         </select>
                     </div>
                     <div class="bir_mm">
-                        <select class="form-control">
+                        <select class="form-control" name="user_birthdate">
                             <option>월</option>
                             <option value="m_1">1</option>
                             <option value="m_2">2</option>
@@ -179,7 +176,7 @@
                         </select>
                     </div>
                     <div class="bir_dd">
-                        <select class="form-control">
+                        <select class="form-control" name="user_birthdate">
                             <option>일</option>
                             <option value="d_1">1</option>
                             <option value="d_2">2</option>
@@ -221,7 +218,7 @@
                     <!-- 사용자 주소 폼 -->
                     <label class="form-label mt-4">주소</label>
                     <div class="location_city">
-                        <select class="form-control">
+                        <select class="form-control" name="user_address">
                             <option>시/도</option>
                             <option value="서울특별시">서울특별시</option>
                             <option value="부산광역시">부산광역시</option>
@@ -244,14 +241,14 @@
                         </select>
                     </div>
                     <div class="location_county">
-                        <select class="form-control">
+                        <select class="form-control" name="user_address">
                             <option>시/군/구</option>
                             <option>...</option>
 
                         </select>
                     </div>
                     <div class="location_town">
-                        <select class="form-control">
+                        <select class="form-control" name="user_address">
                             <option>읍/면/동</option>
                             <option>...</option>
 
@@ -262,7 +259,7 @@
                     </div><br>
                     <div class="form-group">
                         <label for="fire_station_title">상세주소</label>
-                        <input type="text" class="form-control" id="detailAddress"
+                        <input type="text" class="form-control" id="detailAddress" name="user_address2"
                             placeholder="상세주소를 입력해주세요" >
                     </div>
                     <!-- 성별 폼 -->
@@ -272,12 +269,12 @@
 
                     <div class="genderType">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="gender"
+                            <input class="form-check-input" type="radio" name="user_gender" id="gender"
                                 value="men">
                             <label class="form-check-label" for="inlineRadio1">남자</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="gender"
+                            <input class="form-check-input" type="radio" name="user_gender" id="gender"
                                 value="women">
                             <label class="form-check-label" for="inlineRadio2">여자</label>
                         </div>
@@ -288,7 +285,7 @@
 
                     <label class="form-label mt-4">혈액형</label>
                     <div class="bloodType">
-                        <select class="form-control">
+                        <select class="form-control" name="user_bloodtype">
                             <option>선택</option>
                             <option value="A">A형</option>
                             <option value="AB">AB형</option>
@@ -312,42 +309,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript">
-    
-    function checkId(){
-        var id = $('#user_id').val(); 
-        $.ajax({
-            url:'idCheck', //Controller에서 요청 받을 주소
-            type:'post', //POST 방식으로 전달
-            data:{user_id:id},
-            success:function(cnt){ //컨트롤러에서 넘어온 cnt값을 받는다 
-                if(cnt == 0){ //cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디 
-                    $('.userid_ok').css("display","inline-block"); 
-                    $('.userid_check').css("display", "none");
-                } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
-                    $('.userid_check').css("display","inline-block");
-                    $('.userid_ok').css("display", "none");
-                    alert("다른 아이디를 입력해 주세요.");
-                    $('#user_id').val('');
-                }
-            },
-            error:function(){
-                alert("오류");
-            }
-        });
-        };
-
-        </script>
-    
-    
-    
-    
-    
-    
-
-
+   
 </body>
 
 </html>

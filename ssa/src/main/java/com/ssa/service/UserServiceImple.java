@@ -27,7 +27,7 @@ public class UserServiceImple implements UserService {
 	// 회원가입 매퍼로 접근
 	@Override
 	public void UserJoin(UserVO vo) {
-		mapper.UserLogin(vo);
+		mapper.UserJoin(vo);
 
 	}
 	

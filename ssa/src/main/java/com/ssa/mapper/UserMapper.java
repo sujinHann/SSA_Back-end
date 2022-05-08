@@ -13,7 +13,6 @@ public interface UserMapper {
 	public UserVO UserLogin(UserVO vo);
 	
 	//회원가입
-	@Insert("")
 	public void UserJoin(UserVO vo);
 	
 	// 아이디 중복체크
