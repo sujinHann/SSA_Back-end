@@ -94,6 +94,7 @@
 
 	</div>
 	<h1>드디어원격성공</h1>
+	<h1>드디어 맥북도 원격성공</h1>
 	
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
