@@ -545,7 +545,7 @@
             function addMarker(position, idx, title) {
                 console.log(title + "");
 
-                var imageSrc = './resources/119marker.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
+                var imageSrc = './resources/img/119marker.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
                     imageSize = new kakao.maps.Size(60, 50),  // 마커 이미지의 크기
                     imgOptions = {
                         offset: new kakao.maps.Point(13, 37) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
