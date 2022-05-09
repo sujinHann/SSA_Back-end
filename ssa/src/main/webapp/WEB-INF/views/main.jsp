@@ -253,7 +253,8 @@
                 <div class="d-inline-flex align-items-center justify-content-center">
 
                     <div class="text-start">
-                        <span> ${LoginVo.user_name } 환영합니다</span>
+                        <label for="">${LoginVo.user_name } 환영합니다</label>
+                        <button class="btn btn-default btn_sm" onclick="logout()">로그아웃</button>
                     </div>
                 </div>
             </div>
@@ -403,7 +404,7 @@
                         <div class="search">
                             <form onsubmit="searchPlaces(); return false;">
                                 <input class="fire_station_location" style="width: 300px;" type="text" value=""
-                                    id="keyword" size="30" placeholder="소속 소방서를 입력해주세요">
+                                    id="keyword" size="30" placeholder="소속 소방서를 입력해주세요" >
                                 <img class="search_icon"
                                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
                                 <button type="submit" style="display: none;">검색하기</button>
@@ -454,10 +455,14 @@
 
                 var keyword = document.getElementById('keyword').value;
 
-
+				var loc1 = "${LoginVo.user_addressRegion }";
+				var loc2 = "${LoginVo.user_addressDo}";
+				var loc3 = "${LoginVo.user_addressSiGunGu }";
+				var loc4 = "${LoginVo.user_fs }";
+				
 
                 // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-                ps.keywordSearch(keyword, placesSearchCB);
+                ps.keywordSearch(loc1+loc2+loc3+loc4, placesSearchCB);
             }
 
             // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
@@ -853,5 +858,21 @@
     
     <!-- Template Javascript -->
     <script src="./resources/js/main.js"></script>
+    
+   <!-- 로그아웃 -->
+   <script>
+   function getContextPath(){
+	   var hostIndex = location.href.indexOf(location.host) + location.host.length;
+	   var contextPath = location.href.substring(hostIndex,location.href.indexOf("/",hostIndex+1))
+	   return contextPath
+	   
+   }
+   
+   function logout(){
+	   location.href = getContextPath()+"/logout.do"
+   }
+   
+   
+   </script>
 </body>
 </html>

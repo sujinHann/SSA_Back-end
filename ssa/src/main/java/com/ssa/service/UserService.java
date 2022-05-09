@@ -16,4 +16,6 @@ public interface UserService {
 
 	// 아이디 중복체크
 	public int idCheck(String id);
+	
+	public void updateInfo(UserVO vo);
 }

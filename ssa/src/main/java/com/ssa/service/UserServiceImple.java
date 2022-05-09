@@ -39,6 +39,12 @@ public class UserServiceImple implements UserService {
 		return cnt;
 	}
 
+	@Override
+	public void updateInfo(UserVO vo) {
+		mapper.updateInfo(vo);
+		
+	}
+
 
 
 }

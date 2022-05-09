@@ -136,22 +136,28 @@
 									<!-- 추가 : 시/도 를 누르면 해당 지역에 맞는 다음지역 출력하도록 해야함 -->
 									<!-- 지역마다 시/군/구 , 읍/면/동 찾아서 넣어야함 -->
 									<div class="accordion-body">
-										<select name="addressRegion" class="form-control"
-											id="addressRegion1"
-											style="width: 110px; display: inline-block;" disabled="true"></select> <select
-											name="addressDo" class="form-control" id="addressDo1"
-											style="width: 110px; display: inline-block; margin-left: 10px;" disabled="true"></select>
+										<select name="addressRegion" class="form-control" id="addressRegion1" readonly = "readonly" style="width: 110px; display: inline-block;" disabled="true">
+										
+										</select> 
+										
+										<select name="addressDo" class="form-control" id="addressDo1" readonly="readonly"
+											style="width: 110px; display: inline-block; margin-left: 10px;" >
+											
+											</select>
+											
 										<select name="addressSiGunGu" class="form-control"
 											id="addressSiGunGu1"
-											style="width: 110px; display: inline-block; margin-left: 10px;" disabled="true"></select>
+											style="width: 110px; display: inline-block; margin-left: 10px;" readonly="readonly" > 
+											
+											</select>
 
 										<br>
 
 										<!-- 소속 소방서도 드롭다운으로해서 위에 지역 선택시 그 지역에 있는 소방서만 추출되도록 해야함 -->
 										<div class="form-group">
-											<label for="fire_station_title">소방서</label> <input
-												type="text" class="form-control" id="fire_station"
-												name="user_fs" placeholder="소속 소방서를 입력하세요" disabled="true">
+											<label for="fire_station_title">소방서</label> 
+											<input type="text" class="form-control" id="fire_station"
+												name="user_fs" placeholder="소속 소방서를 입력하세요" disabled="true" value="${LoginVo.user_fs }">
 										</div>
 
 
@@ -167,7 +173,7 @@
 						<!-- 아이디 폼 -->
 						<div class="form-group">
 							<label for="userId_title">아이디</label> <input type="id"
-								class="form-control" id="userId" placeholder="아이디를 입력해주세요"
+								class="form-control" id="userId" value="${LoginVo.user_id }"
 								readonly> <small id="idhelp"
 								class="form-text text-muted">4~12자 이내 영문 소문자 숫자</small>
 						</div>
@@ -193,8 +199,8 @@
 						<br>
 						<!-- 이름 폼 -->
 						<div class="form-group">
-							<label for="userName_title">이름</label> <input type="text"
-								class="form-control" id="userName" placeholder="이름을 입력하세요" disabled="true">
+							<label for="userName_title">이름</label> 
+							<input type="text" class="form-control" id="userName" name="userName" readonly="readonly" value="${LoginVo.user_name }">
 						</div>
 
 						<!-- 생년월일 폼  -->
@@ -203,7 +209,7 @@
 						<!--  -->
 						<label class="form-label mt-4">생년월일</label>
 						<div class="bir_yy">
-							<select class="form-control" name="user_birthdate" disabled="true">
+							<select class="form-control" name="user_birthdate" disabled="true" >
 								<option>년도</option>
 								<%for(int i = 2022;i>=1900;i--){ %>
 								<option value="<%=i%>"><%=i %>년
@@ -240,15 +246,14 @@
 						<!-- 사용자 주소 폼 -->
 						<label class="form-label mt-4">주소</label>
 						<div>
-							<input type="text" class="form-control"
-								style="width: auto; display: inline" id="sample6_postcode"
-								placeholder="우편번호"> <input type="button" class="btn"
-								style="background-color: #F39C12; color: white; width: auto"
-								onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-							<br> <input type="text" class="form-control"
-								id="sample6_address" placeholder="주소"> <input
-								type="text" class="form-control" id="sample6_detailAddress"
-								placeholder="상세주소">
+							<input type="text" class="form-control" style="width: auto; display: inline" id="sample6_postcode" placeholder="우편번호"> 
+							
+							<input type="button" class="btn" style="background-color: #F39C12; color: white; width: auto" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+							<br> 
+							
+							<input type="text" class="form-control" id="sample6_address" placeholder="주소" value="${LoginVo.user_address }"> 
+							
+							<input type="text" class="form-control" id="sample6_detailAddress" placeholder="상세주소" value="${LoginVo.user_address2 }">
 
 						</div>
 						<br>

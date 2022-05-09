@@ -147,7 +147,7 @@ display: none;
 						<select class="form-control" name="user_birthdate">
 							<option>월</option>
 							<%for(int j = 1;j<=12;j++){ %>
-							<option value="m_<%=j%>"><%=j%>월</option>
+							<option value="<%=j%>"><%=j%>월</option>
 							<%} %>
 
 						</select>
@@ -156,7 +156,7 @@ display: none;
 						<select class="form-control" name="user_birthdate">
 							<option>일</option>
 							<%for(int j = 1;j<=31;j++){ %>
-							<option value="d_<%=j%>"><%=j%>일</option>
+							<option value="<%=j%>"><%=j%>일</option>
 							<%} %>
 
 						</select>
