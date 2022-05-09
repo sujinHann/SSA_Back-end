@@ -1,5 +1,7 @@
+<%@page import="com.ssa.domain.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <html lang="en">
@@ -246,15 +248,16 @@
                     </a>
                 </div>
             </div>
-
+		<c:if test="${!empty LoginVo}">
             <div class="col-lg-4 text-center bg-secondary">
                 <div class="d-inline-flex align-items-center justify-content-center">
 
                     <div class="text-start">
-                        <span>유리야 사랑해</span>
+                        <span> ${LoginVo.user_name } 환영합니다</span>
                     </div>
                 </div>
             </div>
+            </c:if>
         </div>
     </div>
     <!-- Topbar End -->
@@ -292,10 +295,12 @@
             <div class="row justify-content-start">
                 <div class="col text-center text-lg-start">
                     <!-- 소방서 이름 -->
+                    <c:if test="${!empty LoginVo}">
                     <!-- <h3 class="display-1 text-uppercase  mb-4" style="text-align: right;">필요한 순간, 소방이 함께합니다.</h3> -->
                     <h3 class="display-1 text-uppercase mb-4 text-white" style="text-align: right; font-size: 40px;">필요한 순간, 소방이 함께합니다.</h3>
                     <!-- 소방서 위치?(미정) -->
-                    <h1 class="text-uppercase text-white" style="text-align: right;">00 소방서</h1>
+                    <h1 class="text-uppercase text-white" style="text-align: right;">${LoginVo.user_fs }</h1>
+                    </c:if>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <!-- 버튼 클릭시, 밑으로 내려가 출동현황 보기? -->
 

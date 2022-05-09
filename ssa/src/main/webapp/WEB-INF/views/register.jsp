@@ -71,9 +71,9 @@ display: none;
 								<!-- 추가 : 시/도 를 누르면 해당 지역에 맞는 다음지역 출력하도록 해야함 -->
 								<!-- 지역마다 시/군/구 , 읍/면/동 찾아서 넣어야함 -->
 								<div class="accordion-body">
-									<select name="addressRegion" class="form-control" id="addressRegion1" style="width:110px; display:inline-block;"></select>
-    									<select name="addressDo" class="form-control" id="addressDo1" style="width:110px; display:inline-block; margin-left:10px;"></select>
-    									<select name="addressSiGunGu" class="form-control" id="addressSiGunGu1" style="width:110px; display:inline-block; margin-left:10px;"></select>
+									<select name="user_addressRegion" class="form-control" id="addressRegion1" style="width:110px; display:inline-block;"></select>
+    									<select name="user_addressDo" class="form-control" id="addressDo1"  style="width:110px; display:inline-block; margin-left:10px;"></select>
+    									<select name="user_addressSiGunGu" class="form-control" id="addressSiGunGu1"  style="width:110px; display:inline-block; margin-left:10px;"></select>
 										
 									<br>
 
@@ -170,8 +170,8 @@ display: none;
 					<div>
 					<input type="text" class = "form-control" style ="width:auto; display:inline" id="sample6_postcode" placeholder="우편번호">
 					<input type="button" class = "btn" style = "background-color: #F39C12; color : white; width :auto" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br> 
-					<input type="text" class = "form-control" id="sample6_address" placeholder="주소">
-					<input type="text" class = "form-control" id="sample6_detailAddress" placeholder="상세주소">
+					<input type="text" class = "form-control" id="sample6_address" name="user_address" placeholder="주소">
+					<input type="text" class = "form-control" id="sample6_detailAddress" name="user_address2" placeholder="상세주소">
 					
 					</div><br>
 					
@@ -343,7 +343,7 @@ display: none;
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(function(){
-    areaSelectMaker("select[name=addressRegion]");
+    areaSelectMaker("select[name=user_addressRegion]");
 });
 
 var areaSelectMaker = function(target){

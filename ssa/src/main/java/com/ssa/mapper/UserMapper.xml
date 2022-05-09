@@ -10,7 +10,7 @@
 	
 	<!-- 회원가입 -->
 	<insert id="UserJoin">
-		insert into tb_user values(#{user_fs_location}, #{user_fs}, #{user_id}, #{user_pw},
+		insert into tb_user values(#{user_addressRegion}, #{user_addressDo}, #{user_addressSiGunGu}, #{user_fs}, #{user_id}, #{user_pw},
 		#{user_name}, #{user_birthdate}, #{user_address}, #{user_address2},
 		#{user_gender}, #{user_bloodtype})
 	</insert>

@@ -5,7 +5,9 @@ import lombok.Data;
 @Data
 public class UserVO {
 	
-	private String user_fs_location; // 소방서위치
+	private String user_addressRegion; // 소방서위치1
+	private String user_addressDo; // 소방서위치2
+	private String user_addressSiGunGu; // 소방서위치3
 	private String user_fs; // 소속소방서
 	private String user_id; // 아이디
 	private String user_pw;  // 비밀번호
