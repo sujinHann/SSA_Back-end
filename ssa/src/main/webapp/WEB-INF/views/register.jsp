@@ -83,6 +83,24 @@ display: none;
 											class="form-control" id="fire_station" name="user_fs"
 											placeholder="소속 소방서를 입력하세요">
 									</div>
+									<div class="form-group">
+										<label for="fire_station_title">계급</label>
+										<select name="user_rank" class="form-control" id="user_rank">
+											<option value="">선택</option>
+											<option value="소방사">소방사</option>
+											<option value="소방교">소방교</option>
+											<option value="소방장">소방장</option>
+											<option value="소방위">소방위</option>
+											<option value="소방경">소방경</option>
+											<option value="소방령">소방령</option>
+											<option value="소방준감">소방준감</option>
+											<option value="소방감">소방감</option>
+											<option value="소방정감">소방정감</option>
+											<option value="소방총감">소방총감</option>
+										
+										
+										</select>
+									</div>
 
 
 

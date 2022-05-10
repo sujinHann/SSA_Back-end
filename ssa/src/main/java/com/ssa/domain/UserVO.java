@@ -9,6 +9,7 @@ public class UserVO {
 	private String user_addressDo; // 소방서위치2
 	private String user_addressSiGunGu; // 소방서위치3
 	private String user_fs; // 소속소방서
+	private String user_rank; // 계급
 	private String user_id; // 아이디
 	private String user_pw;  // 비밀번호
 	private String user_name; // 이름
