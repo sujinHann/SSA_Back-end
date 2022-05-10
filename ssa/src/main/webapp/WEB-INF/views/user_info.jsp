@@ -1,5 +1,8 @@
+<%@page import="com.ssa.domain.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="cpath" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,17 +114,19 @@
 
                   </tr>
                 </thead>
-                <tbody>
+                
+                <c:forEach var="uvolist" varStatus="status" items="${User_list}">
                   <tr>
-                    <th scope="row">1</th>
-                    <td>수진소방서</td>
-                    <td>한수진팀</td>
-                    <td>한수진</td>
-                    <td>노비</td>
-                    <td>slave_sujin</td>
+                    <th scope="row">${status.index + 1}</th>
+                    <td>${uvolist.user_fs }</td>
+                    <td>${uvolist.user_fs }</td>
+                    <td>${uvolist.user_name }</td>
+                    <td>${uvolist.user_rank }</td>
+                    <td>${uvolist.user_id }</td>
                     <td style="padding-top: 0px;"> <a class="btn" href="/change_info" >
                         <i class="fa-solid fa-pen"></i></a></td>
                   </tr>
+				</c:forEach>
                   <tr>
                     <th scope="row">2</th>
                     <td>수진소방서</td>

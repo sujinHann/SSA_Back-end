@@ -1,5 +1,7 @@
 package com.ssa.service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -45,6 +47,14 @@ public class UserServiceImple implements UserService {
 		
 	}
 
+	
+	// 대원리스트 조회 
+		@Override
+		public ArrayList<UserVO> UserList() {
+			ArrayList<UserVO> list = mapper.UserList();
+			System.out.println("Service : " + list);
+			return list;
+		}
 
 
 }

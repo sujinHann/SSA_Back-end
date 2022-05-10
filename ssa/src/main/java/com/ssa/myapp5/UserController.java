@@ -1,10 +1,13 @@
 package com.ssa.myapp5;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -71,6 +74,14 @@ public class UserController {
 		session.invalidate();
 		return "redirect:/";
 		
+	}
+	
+	//대원관리
+	@RequestMapping("/user_info")
+	public String state_check(Model model) {
+		ArrayList<UserVO> User_list = UserService.UserList();
+		model.addAttribute("User_list", User_list);			
+		return "user_info";
 	}
 	
 }

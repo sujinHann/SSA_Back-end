@@ -1,5 +1,7 @@
 package com.ssa.mapper;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -20,5 +22,8 @@ public interface UserMapper {
 	
 	//회원정보 수정
 	public void updateInfo(UserVO vo);
+	
+	// 대원리스트
+	public ArrayList<UserVO> UserList();
 	
 }

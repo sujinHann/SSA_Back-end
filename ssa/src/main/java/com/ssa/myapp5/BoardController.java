@@ -42,13 +42,7 @@ public class BoardController {
 		return "/change_info";
 	}
 	
-	/* 대원관리 이동 */
-	@GetMapping("/user_info")
-	public String user_info() {
-		return "/user_info";
-	}
-	
-	
+
 	
 
 	

@@ -25,6 +25,10 @@
 		UPDATE tb_user set user_name=#{user_name} WHERE user_id=#{user_id}
 	</update>
 
+	<!-- 대원 리스트확인 -->
+	<select id="UserList" resultType="com.ssa.domain.UserVO">
+		select * from tb_user
+	</select>
 
 
 </mapper>
