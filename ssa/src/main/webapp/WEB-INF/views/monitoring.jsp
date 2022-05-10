@@ -1,5 +1,7 @@
+<%@page import="com.ssa.domain.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,13 +103,15 @@
                     <div class="user_monitoring_state_info" >
                     <img id="user_photo" src="./resources/img/team-1.jpg" alt="" width="50%">
                         <div class="user_monitoring_state_info_box">
+                            <c:if test="${!empty LoginVo}">
                             <div class="user_monitoring_state_info_box_1">
                                 <!-- 이름 -->
-                                <h3 class="m-0 text-uppercase ">한수진</h3>
+                                <h3 class="m-0 text-uppercase ">${LoginVo.user_name }</h3>
                                 &nbsp;&nbsp;&nbsp;
                                 <!-- 혈액형 -->
-                                <h3 class="m-0 text-uppercase ">B형</h3>
+                                <h3 class="m-0 text-uppercase ">${LoginVo.user_bloodtype }형</h3>
                             </div>    
+                            </c:if>  
                             
                             <div class="user_monitoring_state_info_box_2">
                                 <!-- 심박수 -->

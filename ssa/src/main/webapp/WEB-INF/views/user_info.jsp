@@ -127,17 +127,7 @@
                         <i class="fa-solid fa-pen"></i></a></td>
                   </tr>
 				</c:forEach>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>수진소방서</td>
-                    <td>김유리 팀</td>
-                    <td>김유리</td>
-                    <td>노예</td>
-                    <td>slave_yuri</td>
-                    <td style="padding-top: 0px;"> <a class="btn" href="/change_info">
-                        <i class="fa-solid fa-pen"></i></a></td>
-                  </tr>
-
+ 
                 </tbody>
               </table>
 

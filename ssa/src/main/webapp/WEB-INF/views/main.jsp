@@ -253,7 +253,7 @@
                 <div class="d-inline-flex align-items-center justify-content-center">
 
                     <div class="text-start">
-                        <label for="">${LoginVo.user_name } 환영합니다</label>
+                        <label for="">${LoginVo.user_name } 대원님 환영합니다</label>
                         <button class="btn btn-default btn_sm" onclick="logout()">로그아웃</button>
                     </div>
                 </div>
