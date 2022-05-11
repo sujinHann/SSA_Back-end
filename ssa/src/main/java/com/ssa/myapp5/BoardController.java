@@ -24,11 +24,11 @@ public class BoardController {
 		return "/main";
 	}
 	
-	/* 상태확인 이동 */
-	@GetMapping("/state_check")
-	public String state_check() {
-		return "/state_check";
-	}
+//	/* 상태확인 이동 */
+//	@GetMapping("/state_check")
+//	public String state_check() {
+//		return "/state_check";
+//	}
 	
 	/* 모니터링 이동 */
 	@GetMapping("/monitoring")

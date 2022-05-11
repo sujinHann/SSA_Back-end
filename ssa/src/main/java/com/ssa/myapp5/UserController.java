@@ -85,7 +85,7 @@ public class UserController {
 	
 	//대원관리
 	@RequestMapping("/user_info")
-	public String state_check(Model model) {
+	public String user_info(Model model) {
 		ArrayList<UserVO> User_list = UserService.UserList();
 		model.addAttribute("User_list", User_list);			
 		return "user_info";
@@ -97,5 +97,13 @@ public class UserController {
 		mapper.change_info(vo);
 		System.out.println("수정 : " + vo);
 		return "redirect:/";
+	}
+	
+	//상태확인
+	@RequestMapping("/state_check")
+	public String state_check(Model model) {
+		ArrayList<UserVO> state_list = UserService.statelist();
+		model.addAttribute("state_list", state_list);			
+		return "state_check";
 	}
 }

@@ -18,6 +18,8 @@ public class UserVO {
 	private String user_address2; //상세주소
 	private String user_gender; // 성별
 	private String user_bloodtype; // 혈액형
+	private String user_state; // 상태
+	private String user_team; // 팀
 	
 	
 }

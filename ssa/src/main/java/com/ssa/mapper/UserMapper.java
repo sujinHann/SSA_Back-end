@@ -27,4 +27,7 @@ public interface UserMapper {
 	// 대원리스트
 	public ArrayList<UserVO> UserList();
 	
+	// 상태확인
+	public ArrayList<UserVO> statelist();
+	
 }

@@ -33,7 +33,7 @@ public class UserServiceImple implements UserService {
 		mapper.UserJoin(vo);
 
 	}
-	
+
 	// 아이디 중복체크 매퍼 접근
 	@Override
 	public int idCheck(String id) {
@@ -45,17 +45,23 @@ public class UserServiceImple implements UserService {
 	@Override
 	public void change_info(UserVO2 vo) {
 		mapper.change_info(vo);
-		
+
 	}
 
-	
-	// 대원리스트 조회 
-		@Override
-		public ArrayList<UserVO> UserList() {
-			ArrayList<UserVO> list = mapper.UserList();
-			System.out.println("Service : " + list);
-			return list;
-		}
+	// 대원리스트 조회
+	@Override
+	public ArrayList<UserVO> UserList() {
+		ArrayList<UserVO> list = mapper.UserList();
+		System.out.println("Service : " + list);
+		return list;
+	}
 
+	// 상태확인 조회
+	@Override
+	public ArrayList<UserVO> statelist() {
+		ArrayList<UserVO> list = mapper.statelist();
+		System.out.println("Service : " + list);
+		return list;
+	}
 
 }

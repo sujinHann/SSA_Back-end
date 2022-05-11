@@ -31,6 +31,11 @@
 	<update id="change_info" parameterType="com.ssa.domain.UserVO2">
 		Update tb_user set user_pw = #{user_pwCheck1}, user_address = #{user_address}, user_address2 = #{user_address2} where user_id = #{user_id} and user_pw = #{user_pw}
 	</update>
+	
+	<!-- 상태확인 -->
+	<select id="statelist" resultType="com.ssa.domain.UserVO">
+		select * from tb_user
+	</select>
 
 
 </mapper>
