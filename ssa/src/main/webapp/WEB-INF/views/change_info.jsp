@@ -136,19 +136,19 @@
 									<!-- 추가 : 시/도 를 누르면 해당 지역에 맞는 다음지역 출력하도록 해야함 -->
 									<!-- 지역마다 시/군/구 , 읍/면/동 찾아서 넣어야함 -->
 									<div class="accordion-body">
-										<select name="addressRegion" class="form-control" id="addressRegion1" readonly = "readonly" style="width: 110px; display: inline-block;" disabled="true">
-										
+										<select name="addressRegion" class="form-control" id="addressRegion1" disabled style="width: 110px; display: inline-block;">
+											<option>${LoginVo.user_addressRegion }</option>
 										</select> 
 										
-										<select name="addressDo" class="form-control" id="addressDo1" readonly="readonly"
+										<select name="addressDo" class="form-control" id="addressDo1" disabled
 											style="width: 110px; display: inline-block; margin-left: 10px;" >
-											
+											<option>${LoginVo.user_addressDo }</option>
 											</select>
 											
-										<select name="addressSiGunGu" class="form-control"
+										<select name="addressSiGunGu" class="form-control" disabled
 											id="addressSiGunGu1"
-											style="width: 110px; display: inline-block; margin-left: 10px;" readonly="readonly" > 
-											
+											style="width: 110px; display: inline-block; margin-left: 10px;" > 
+											<option>${LoginVo.user_addressSiGunGu }</option>
 											</select>
 
 										<br>
@@ -157,7 +157,7 @@
 										<div class="form-group">
 											<label for="fire_station_title">소방서</label> 
 											<input type="text" class="form-control" id="fire_station"
-												name="user_fs" placeholder="소속 소방서를 입력하세요" disabled="true" value="${LoginVo.user_fs }">
+												name="user_fs" placeholder="소속 소방서를 입력하세요" readonly = "readonly" value="${LoginVo.user_fs }">
 										</div>
 
 
@@ -207,41 +207,7 @@
 						<!-- 년도는 다 넣기 귀찮아서 나중에 이클립스로 다시 연동할 때 for문으로 돌릴예정 -->
 						<!-- 월 선택 시 그 월에 맞는 일수가 나오도록 해야함 -->
 						<!--  -->
-						<label class="form-label mt-4">생년월일</label>
-						<div class="bir_yy">
-							<select class="form-control" name="user_birthdate" disabled="true" >
-								<option>년도</option>
-								<%for(int i = 2022;i>=1900;i--){ %>
-								<option value="<%=i%>"><%=i %>년
-								</option>
-								<%} %>
-
-
-							</select>
-						</div>
-						<div class="bir_mm">
-							<select class="form-control" name="user_birthdate" disabled="true">
-								<option>월</option>
-								<%for(int j = 1;j<=12;j++){ %>
-								<option value="m_<%=j%>"><%=j%>월
-								</option>
-								<%} %>
-
-							</select>
-						</div>
-						<div class="bir_dd">
-							<select class="form-control" name="user_birthdate" disabled="true">
-								<option>일</option>
-								<%for(int j = 1;j<=31;j++){ %>
-								<option value="d_<%=j%>"><%=j%>일
-								</option>
-								<%} %>
-
-							</select>
-
-
-						</div>
-
+						
 
 						<!-- 사용자 주소 폼 -->
 						<label class="form-label mt-4">주소</label>
@@ -400,7 +366,7 @@
 	<script src="./resources/js/main.js"></script>
 
 	<!--지역 셀렉트박스-->
-	<script
+	<!-- <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 $(function(){
@@ -523,7 +489,7 @@ var areaSelectMaker = function(target){
             });
 
             $(a2).on("change", function(){
-                a3.empty().append("<option value=''>선택</option>");
+                a3.empty().append("<option value=''>읍/면/동</option>");
                 var Region = a1.val();
                 var Do = $(this).val();
                 var keys = Object.keys(area[Region][Do]);
@@ -535,14 +501,14 @@ var areaSelectMaker = function(target){
 
         function init(t, first){
         	
-            first ? t.empty().append("<option value=''>시/도</option>") : "";
+            first ? t.empty().append("<option value='' >시/도</option>") : "";
             t.next().empty().append("<option value=''>시/군/구</option>");
             t.next().next().empty().append("<option value=''>읍/면/동</option>");
         }
     }
 }
 
-</script>
+</script> -->
 
 	<!-- 우편번호 API  -->
 	<script
