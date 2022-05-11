@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Service;
 
 import com.ssa.domain.UserVO;
+import com.ssa.domain.UserVO2;
 
 @Service
 public interface UserService {
@@ -20,7 +21,7 @@ public interface UserService {
 	public int idCheck(String id);
 	
 	// 대원정보수정
-	public void updateInfo(UserVO vo);
+	public void change_info(UserVO2 vo);
 	
 	// 대원리스트
 	public ArrayList<UserVO> UserList();

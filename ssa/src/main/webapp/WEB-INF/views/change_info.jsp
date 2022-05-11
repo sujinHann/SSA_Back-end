@@ -121,7 +121,7 @@
 				<div class="col-md-7 col-lg-8 ">
 					<h4 class="mb-3">Billing address</h4>
 					<!-- form 태그 -->
-					<form action="updateInfo.do" method=POST class="reg_form">
+					<form action="/change_info.do" method=POST class="reg_form">
 
 						<!-- 지역 아코디언  -->
 						<div class="accordion" id="accordionExample">
@@ -136,16 +136,16 @@
 									<!-- 추가 : 시/도 를 누르면 해당 지역에 맞는 다음지역 출력하도록 해야함 -->
 									<!-- 지역마다 시/군/구 , 읍/면/동 찾아서 넣어야함 -->
 									<div class="accordion-body">
-										<select name="addressRegion" class="form-control" id="addressRegion1" disabled style="width: 110px; display: inline-block;">
+										<select name="user_addressRegion" class="form-control" id="addressRegion1" disabled style="width: 110px; display: inline-block;">
 											<option>${LoginVo.user_addressRegion }</option>
 										</select> 
 										
-										<select name="addressDo" class="form-control" id="addressDo1" disabled
+										<select name="user_addressDo" class="form-control" id="addressDo1" disabled
 											style="width: 110px; display: inline-block; margin-left: 10px;" >
 											<option>${LoginVo.user_addressDo }</option>
 											</select>
 											
-										<select name="addressSiGunGu" class="form-control" disabled
+										<select name="user_addressSiGunGu" class="form-control" disabled
 											id="addressSiGunGu1"
 											style="width: 110px; display: inline-block; margin-left: 10px;" > 
 											<option>${LoginVo.user_addressSiGunGu }</option>
@@ -174,33 +174,33 @@
 						<div class="form-group">
 							<label for="userId_title">아이디</label> <input type="id"
 								class="form-control" id="userId" value="${LoginVo.user_id }"
-								readonly> <small id="idhelp"
+								readonly name="user_id"> <small id="idhelp"
 								class="form-text text-muted">4~12자 이내 영문 소문자 숫자</small>
 						</div>
 						<br>
 						<!-- 비밀번호 폼 -->
 						<div class="form-group">
 							<label for="passowrd_title">현재 비밀번호</label> <input type="password"
-								class="form-control" id="password" placeholder="변경할 비밀번호를 입력해주세요">
+								class="form-control" name = "user_pw" id="password" placeholder="변경할 비밀번호를 입력해주세요">
 						</div>
 						<br>
 						<!-- 비밀번호 재확인 폼 -->
 						<div class="form-group">
 							<label for="passwordCheck_title">새 비밀번호</label> <input
-								type="password" class="form-control" id="passwordCheck1"
+								type="password" class="form-control" name = "user_pwCheck1" id="passwordCheck1"
 								placeholder="변경할 비밀번호를 다시 입력해주세요">
 						</div>
 						<br>
 						<div class="form-group">
 							<label for="passwordCheck_title">새 비밀번호 확인</label> <input
-								type="password" class="form-control" id="passwordCheck2"
+								type="password" class="form-control" name = "user_pwCheck2" id="passwordCheck2"
 								placeholder="변경할 비밀번호를 다시 입력해주세요">
 						</div>
 						<br>
 						<!-- 이름 폼 -->
 						<div class="form-group">
 							<label for="userName_title">이름</label> 
-							<input type="text" class="form-control" id="userName" name="userName" readonly="readonly" value="${LoginVo.user_name }">
+							<input type="text" class="form-control" id="userName" name="user_name" readonly="readonly" value="${LoginVo.user_name }">
 						</div>
 
 						<!-- 생년월일 폼  -->
@@ -217,9 +217,9 @@
 							<input type="button" class="btn" style="background-color: #F39C12; color: white; width: auto" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
 							<br> 
 							
-							<input type="text" class="form-control" id="sample6_address" placeholder="주소" value="${LoginVo.user_address }"> 
+							<input type="text" class="form-control" id="sample6_address" name = "user_address" placeholder="주소" value="${LoginVo.user_address }"> 
 							
-							<input type="text" class="form-control" id="sample6_detailAddress" placeholder="상세주소" value="${LoginVo.user_address2 }">
+							<input type="text" class="form-control" id="sample6_detailAddress" name = "user_address2" placeholder="상세주소" value="${LoginVo.user_address2 }">
 
 						</div>
 						<br>
@@ -314,7 +314,8 @@
 		</div>
 	</div>
 	<!-- Footer End -->
-
+<!--알림창-->
+    
 
 	<!-- Back to Top -->
 	<a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i
@@ -477,7 +478,36 @@ var areaSelectMaker = function(target){
 }
 
 </script> -->
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    	<script>
+    	$("#passwordCheck2").blur(function(){
+    		let pw = $("#passwordCheck1").val();
+    		let pw2 = $("#passwordCheck2").val();
+    		console.log("pw : " + pw)
+    		console.log("pw2 : " + pw2)
+    		if(pw===""||pw2===""){
+    			Swal.fire({
+                    icon: 'warning',
+                    title: '비밀번호체크',
+                    text: '비밀번호를 입력해주세요',
+                });
+    		}else if(pw == pw2){
+    			Swal.fire({
+                    icon: 'success',
+                    title: '비밀번호체크',
+                    text: '비밀번호가 동일합니다',
+                });
+    		}else{
+    			Swal.fire({
+                    icon: 'error',
+                    title: '비밀번호체크',
+                    text: '비밀번호가 동일하지 않습니다',
+                });
+    		}
+			
+    });
+    
+    </Script>
 	<!-- 우편번호 API  -->
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

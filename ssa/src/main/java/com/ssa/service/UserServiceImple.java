@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ssa.domain.UserVO;
+import com.ssa.domain.UserVO2;
 import com.ssa.mapper.UserMapper;
 
 @Service
@@ -42,8 +43,8 @@ public class UserServiceImple implements UserService {
 	}
 
 	@Override
-	public void updateInfo(UserVO vo) {
-		mapper.updateInfo(vo);
+	public void change_info(UserVO2 vo) {
+		mapper.change_info(vo);
 		
 	}
 

@@ -28,8 +28,8 @@
 	
 	<!-- 회원정보수정 -->
 	
-	<update id="updateInfo" parameterType="com.ssa.domain.UserVO">
-		Update tb_user set user_pw = #{user_pw} where user_id = #{user_id}
+	<update id="change_info" parameterType="com.ssa.domain.UserVO2">
+		Update tb_user set user_pw = #{user_pwCheck1}, user_address = #{user_address}, user_address2 = #{user_address2} where user_id = #{user_id} and user_pw = #{user_pw}
 	</update>
 
 

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.ssa.domain.UserVO;
+import com.ssa.domain.UserVO2;
 
 
 @Mapper
@@ -21,7 +22,7 @@ public interface UserMapper {
 	public int idCheck(String id);
 	
 	//회원정보 수정
-	public void updateInfo(UserVO vo);
+	public void change_info(UserVO2 vo);
 	
 	// 대원리스트
 	public ArrayList<UserVO> UserList();

@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ssa.domain.UserVO;
+import com.ssa.domain.UserVO2;
+import com.ssa.mapper.UserMapper;
 import com.ssa.service.UserServiceImple;
+
 
 
 @Controller
@@ -24,7 +28,8 @@ public class UserController {
 
 	@Autowired
 	private UserServiceImple UserService;
-	private UserServiceImple mapper;
+	@Autowired
+	private UserMapper mapper;
 	
 	
 
@@ -87,13 +92,10 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value="/update_info.do", method=RequestMethod.POST)
-	
-	public String updateInfo(UserVO vo, HttpSession session) {
-		mapper.updateInfo(vo);
-		session.invalidate();
-		System.out.println("수정 : " + vo.getUser_pw());
+	@RequestMapping(value="/change_info.do", method=RequestMethod.POST)	
+	public String update_info(UserVO2 vo) {
+		mapper.change_info(vo);
+		System.out.println("수정 : " + vo);
 		return "redirect:/";
 	}
-	
 }
