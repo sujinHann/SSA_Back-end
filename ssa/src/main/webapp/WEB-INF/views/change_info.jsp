@@ -121,7 +121,7 @@
 				<div class="col-md-7 col-lg-8 ">
 					<h4 class="mb-3">Billing address</h4>
 					<!-- form 태그 -->
-					<form action="#" method=GET class="reg_form">
+					<form action="updateInfo.do" method=POST class="reg_form">
 
 						<!-- 지역 아코디언  -->
 						<div class="accordion" id="accordionExample">
@@ -187,13 +187,13 @@
 						<!-- 비밀번호 재확인 폼 -->
 						<div class="form-group">
 							<label for="passwordCheck_title">새 비밀번호</label> <input
-								type="password" class="form-control" id="passwordCheck"
+								type="password" class="form-control" id="passwordCheck1"
 								placeholder="변경할 비밀번호를 다시 입력해주세요">
 						</div>
 						<br>
 						<div class="form-group">
 							<label for="passwordCheck_title">새 비밀번호 확인</label> <input
-								type="password" class="form-control" id="passwordCheck"
+								type="password" class="form-control" id="passwordCheck2"
 								placeholder="변경할 비밀번호를 다시 입력해주세요">
 						</div>
 						<br>
@@ -224,43 +224,11 @@
 						</div>
 						<br>
 
-						<!-- <!--  성별 폼
-    <div>
-        <label class="form-label mt-4">성별</label>
-    </div>
-
-    <div class="genderType">
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="gender" id="gender"
-                value="men">
-            <label class="form-check-label" for="inlineRadio1">남자</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="gender" id="gender"
-                value="women">
-            <label class="form-check-label" for="inlineRadio2">여자</label>
-        </div>
-
-    </div><br>
-
-    혈액형 폼
-
-    <label class="form-label mt-4">혈액형</label>
-    <div class="bloodType">
-        <select class="form-control">
-            <option>선택</option>
-            <option value="A">A형</option>
-            <option value="AB">AB형</option>
-            <option value="B">B형</option>
-            <option value="O">O형</option>
-
-
-        </select>
-    </div><br><br><br> -->
+	
 
 						<!-- 가입 버튼 -->
 						<div class="col-sm-12">
-							<button class="btn btn-primary border-inner w-100 py-3"
+							<button class="btn btn-primary border-inner w-100 py-3" id="btnUpdate"
 								type="submit">수정</button>
 						</div>
 					</form>
@@ -563,7 +531,21 @@ var areaSelectMaker = function(target){
         }).open();
    	 }
 	</script>
-
+	
+<!-- <!-- 	수정 버튼 클릭시 정보 업데이트하는 제이쿼리 
+	<script>
+	$(document).ready(function(){
+		$("#btnUpdate").click(function(){
+			document.form1.action = "{path}/update_info.do";
+			document.form1.submit();
+		});
+	});
+	
+	
+	 --> 
+	
+	
+	<!-- </script> -->
 </body>
 
 </html>
