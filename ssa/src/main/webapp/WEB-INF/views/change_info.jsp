@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,8 +93,10 @@
 					href="/state_check" class="nav-item nav-link">상태확인</a> <a
 					href="/monitoring" class="nav-item nav-link">모니터링</a>
 				<!-- 관리자의 경우 -->
-				<a href="/user_info" class="nav-item nav-link">대원관리</a>
-				<!-- 관리자의 경우 끝 -->
+				<c:if test="${LoginVo.user_admin eq 'Y'}">
+              <a href="/user_info" class="nav-item nav-link">대원관리</a>
+              <!-- 관리자의 경우 끝 -->
+              </c:if>
 				<a href="/change_info" class="nav-item nav-link active">정보수정</a>
 			</div>
 		</div>
