@@ -285,6 +285,7 @@
               <!-- 관리자의 경우 끝 -->
               </c:if>
                 <a href="/change_info" class="nav-item nav-link">정보수정</a>
+                <a href="/boardList" class="nav-item nav-link">공지사항</a>
 
             </div>
         </div>
