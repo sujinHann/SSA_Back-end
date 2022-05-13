@@ -2,6 +2,8 @@ package com.ssa.mapper;
 
 import java.util.ArrayList;
 
+import org.apache.ibatis.annotations.Delete;
+
 import com.ssa.domain.Board;
 
 public interface BoardMapper {
@@ -16,6 +18,7 @@ public interface BoardMapper {
 	public Board boardContent(int idx);
 	
 	//특정 게시물 번호를 가진 게시물 삭제
+	@Delete("delete from tb_table where idx=#{idx}")
 	public void boardDelete(int idx);
 	
 	//특정 게시물 번호를 가진 게시물 수정

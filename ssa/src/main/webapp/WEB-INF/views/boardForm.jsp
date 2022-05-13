@@ -39,7 +39,7 @@
                <div class="form-group">
                   <label class="control-label col-sm-2" for="writer">작성자:</label>
                   <div class="col-sm-10">
-                     <input type="text" class="form-control" id="writer" name ="writer"
+                     <input type="text" class="form-control" id="writer" name ="user_name"
                         placeholder="Enter writer" readonly="readonly" value="${LoginVo.user_name }">
                   </div>
                </div>

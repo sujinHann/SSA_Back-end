@@ -4,14 +4,14 @@
       select * from tb_table
    </select>
    <insert id="boardInsert" parameterType="com.ssa.domain.Board">
-      insert into tb_table(idx,title, content,user_name) values(sboard_seq.nextval, #{title}, #{content}, #{user_name})
+      insert into tb_table(idx,title, content,user_name) values(NextVal(table_seq), #{title}, #{content}, #{user_name})
    </insert>
    <select id="boardContent" resultType = "com.ssa.domain.Board" parameterType="int">
          select * from tb_table where idx =#{idx}
    </select>
  
     <update id="boardUpdate" parameterType="com.ssa.domain.Board">
-       update user_table set title= #{title}, content= #{content} where idx=#{idx}
+       update tb_table set title= #{title}, content= #{content} where idx=#{idx}
     </update>
    
 </mapper>

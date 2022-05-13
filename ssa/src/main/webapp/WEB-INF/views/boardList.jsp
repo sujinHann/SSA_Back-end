@@ -33,7 +33,7 @@
             <c:forEach var ="vo" items="${list}">
             <tr>
                <td>${vo.idx}</td>
-               <td><a href="/myapp/boardContent.do?idx=${vo.idx}">${vo.title}</a></td>
+               <td><a href="/boardContent.do?idx=${vo.idx}">${vo.title}</a></td>
                <td>${vo.user_name}</td>
                <td>${vo.indate}</td>
                <td>${vo.count}</td>

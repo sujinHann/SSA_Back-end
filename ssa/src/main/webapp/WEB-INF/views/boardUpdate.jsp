@@ -22,7 +22,7 @@
       <div class="panel panel-default">
          <div class="panel-heading">Board</div>
          <div class="panel-body">
-            <form class="form-horizontal" action="/myapp/boardUpdate.do" method = "post">
+            <form class="form-horizontal" action="/boardUpdate.do" method = "post">
             <input type="hidden" value="${vo.idx}" name="idx">
                <div class="form-group">
                   <label class="control-label col-sm-2" for="title">제목:</label>
@@ -40,8 +40,8 @@
                <div class="form-group">
                   <label class="control-label col-sm-2" for="writer">작성자:</label>
                   <div class="col-sm-10">
-                     <input type="text" class="form-control" id="writer" name ="writer"
-                        value ="${vo.writer}" readonly="readonly">
+                     <input type="text" class="form-control" id="writer" name ="user_name"
+                        value ="${vo.user_name}" readonly="readonly">
                   </div>
                </div>
                

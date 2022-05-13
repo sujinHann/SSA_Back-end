@@ -58,17 +58,17 @@ public class BoardController {
 	public String boardList() {
 		return "/boardList";
 	}
-	/* 공지사항 이동 */
+	/* 공지 작성 이동 */
 	@GetMapping("/boardForm")
 	public String boardInsert() {
 		return "/boardForm";
 	}
-	/* 공지사항 이동 */
+	/* 게시판 내용보기 이동 */
 	@GetMapping("/boardContent")
 	public String boardContent() {
 		return "/boardContent";
 	}
-	/* 공지사항 이동 */
+	/* 공지사항 수정 이동 */
 	@GetMapping("/boardUpdate")
 	public String boardUpdate() {
 		return "/boardUpdate";
@@ -87,7 +87,7 @@ public class BoardController {
 		
 		model.addAttribute("list",list);
 		
-		return "boradList";
+		return "boardList";
 	}
 	
 	@GetMapping("/boardForm.do")
