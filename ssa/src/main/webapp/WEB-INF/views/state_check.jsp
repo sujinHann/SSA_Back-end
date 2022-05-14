@@ -160,6 +160,7 @@
 							<div class="bg-dark border-inner text-center p-4">
 								<div class="state_check_state">
 									<h4 class="text-uppercase text-primary">${statelist.user_name }</h4>
+									<h4 id = "user_id" style = "display: none;">${statelist.user_id }</h4>
 									&nbsp;&nbsp;
 									<h4 class="text-uppercase text-primary">|</h4>
 									&nbsp;&nbsp;
@@ -171,11 +172,15 @@
 									<div style="padding-right: 0px;">
 										<!-- 심장박동 수정 예정 -->
 										<a class="btn" href="#"
-											style="padding-right: 0px; padding: 0; margin: 0;"><i
-											class="fa-solid fa-heart"></i></a>
+											style="padding-right: 0px; padding: 0; margin: 0;">
+											<i class="fa-solid fa-heart"></i></a>
 									</div>
 									<div class="">
 										<a class="btn" href="#" style="padding: 0; margin: 0;">90%</a>
+									</div>
+									<div class="">
+										<a class="btn" href="#" style="padding: 0; margin: 0;" onclick="getUserState()">클릭</a>
+										<a class="temp" href="#" style="padding: 0; margin: 0;"></a>
 									</div>
 									<!-- 비디오 버튼 클릭(모니터링으로 이어짐) -->
 									<div class="">
@@ -311,6 +316,32 @@
                 })
                 Array.forEach()?.forEach
             }) 
+    </script>
+    <script>
+   	function getUserState(user_id, callback) {
+   		$.ajax({ 
+    		type: "POST",
+    		url: "${pageContext.request.contextPath}/temp",
+    		data: {'user_id', ${statelist.user_id }},
+    		dataType: text,
+    		success: callback    		
+    	});       	
+   	}
+   	
+   	function updateUserHelth(userDom, temp){
+   		documnet.getElementsByClassName('temp').innerText = temp
+   	}
+    
+    function stateUpdate(user_id) {
+    	let userDom = documnet.getElementById(user_id)
+    	getUserState(user_id, data => {
+    		updateUserHelth(userDom, temp);
+    	})
+	
+	}
+       
+          
+
     </script>
 </body>
 
