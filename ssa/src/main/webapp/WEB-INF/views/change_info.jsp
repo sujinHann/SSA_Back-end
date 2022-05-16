@@ -189,8 +189,8 @@
 						<br>
 						<!-- 비밀번호 재확인 폼 -->
 						<div class="form-group">
-							<label for="passwordCheck_title">새 비밀번호</label> <input
-								type="password" class="form-control" name = "user_pwCheck1" id="passwordCheck1"
+							<label for="passwordCheck_title">새 비밀번호</label> 
+							<input type="password" class="form-control" name = "user_pwCheck1" id="passwordCheck1"
 								placeholder="변경할 비밀번호를 다시 입력해주세요">
 						</div>
 						<br>
